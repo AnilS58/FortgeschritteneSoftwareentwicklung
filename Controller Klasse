@@ -1,0 +1,24 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/user-stories")
+public class UserStoryController {
+
+    @Autowired
+    private UserStoryService userStoryService;
+
+    @PostMapping
+    public UserStory addUserStory(@RequestBody UserStory userStory) {
+        return userStoryService.saveUserStory(userStory);
+    }
+
+    @GetMapping
+    public List<UserStory> getAllUserStories() {
+        return userStoryService.getAllUserStories();
+    }
+
+    // Weitere Endpunkte für Update, Delete usw.
+}
