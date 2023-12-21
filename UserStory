@@ -1,7 +1,7 @@
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+//testtest
 @Entity
 @Getter
 @Setter
